@@ -1,0 +1,24 @@
+<section class="ui center aligned middle aligned segment">
+  <h2>{{title}} Games</h2>
+
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Developer</th>
+        <th>Year</th>
+        <th>Platform</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each games}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{developer}}</td>
+          <td>{{year}}</td>
+          <td>{{platform}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>

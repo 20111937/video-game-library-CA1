@@ -1,0 +1,14 @@
+<section class="ui center aligned middle aligned segment">
+  <h2>Video Game Categories</h2>
+
+  <div class="ui relaxed divided list">
+    {{#each categories}}
+      <div class="item">
+        <div class="content">
+          <h3>{{title}}</h3>
+          <a href="/category/{{id}}">View Games</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

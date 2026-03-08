@@ -1,0 +1,76 @@
+{
+  "categories": [
+    {
+      "id": "rpg",
+      "title": "RPG",
+      "games": [
+        {
+          "name": "The Witcher 3",
+          "developer": "CD Projekt Red",
+          "year": 2015,
+          "platform": "PC, PS4, Xbox One"
+        },
+        {
+          "name": "Elden Ring",
+          "developer": "FromSoftware",
+          "year": 2022,
+          "platform": "PC, PS5, Xbox Series X"
+        }
+      ]
+    },
+    {
+      "id": "action",
+      "title": "Action",
+      "games": [
+        {
+          "name": "Grand Theft Auto V",
+          "developer": "Rockstar Games",
+          "year": 2013,
+          "platform": "PC, PS5, Xbox Series X"
+        },
+        {
+          "name": "Marvel's Spider-Man",
+          "developer": "Insomniac Games",
+          "year": 2018,
+          "platform": "PS4, PS5"
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "title": "Sports",
+      "games": [
+        {
+          "name": "EA Sports FC 24",
+          "developer": "EA Sports",
+          "year": 2023,
+          "platform": "PC, PS5, Xbox Series X"
+        },
+        {
+          "name": "NBA 2K24",
+          "developer": "Visual Concepts",
+          "year": 2023,
+          "platform": "PC, PS5, Xbox Series X"
+        }
+      ]
+    },
+    {
+      "id": "horror",
+      "title": "Horror",
+      "games": [
+        {
+          "name": "Resident Evil 4",
+          "developer": "Capcom",
+          "year": 2023,
+          "platform": "PC, PS5, Xbox Series X"
+        },
+        {
+          "name": "Silent Hill 2",
+          "developer": "Bloober Team",
+          "year": 2024,
+          "platform": "PS5, PC"
+        }
+      ]
+    }
+  ]
+}
