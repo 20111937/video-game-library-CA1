@@ -18,6 +18,7 @@ const category = {
 
     const viewData = {
       title: selectedCategory.title,
+        id: "dashboard",
       games: selectedCategory.games,
     };
 
