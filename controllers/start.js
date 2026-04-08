@@ -11,7 +11,7 @@ const start = {
     
     const viewData = {
      title: "Video Game Library",
-     id: "home"
+     id: "home",
       info: appStore.getAppInfo()
     };
     
