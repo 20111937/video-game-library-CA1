@@ -15,12 +15,12 @@ const category = {
     if (!selectedCategory) {
       return response.status(404).send("Category not found");
     }
-
-    const viewData = {
-      title: selectedCategory.title,
-      id: "dashboard",
-      games: selectedCategory.games,
-    };
+    
+const viewData = {
+  title: selectedCategory.title,
+  id: categoryId,
+  games: selectedCategory.games,
+};
 
     response.render("category", viewData);
   },
