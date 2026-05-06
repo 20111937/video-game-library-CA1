@@ -56,6 +56,44 @@ const category = {
 
     response.redirect("/category/" + categoryId);
   },
+
+  editGameView(request, response) {
+    const categoryId = request.params.id;
+    const gameIndex = request.params.gameindex;
+
+    const selectedCategory = games.categories.find(
+      (category) => category.id === categoryId
+    );
+
+    const selectedGame = selectedCategory.games[gameIndex];
+
+    const viewData = {
+      title: "Edit Game",
+      categoryId: categoryId,
+      gameIndex: gameIndex,
+      game: selectedGame,
+    };
+
+    response.render("editgame", viewData);
+  },
+
+  updateGame(request, response) {
+    const categoryId = request.params.id;
+    const gameIndex = request.params.gameindex;
+
+    const selectedCategory = games.categories.find(
+      (category) => category.id === categoryId
+    );
+
+    selectedCategory.games[gameIndex] = {
+      name: request.body.name,
+      developer: request.body.developer,
+      year: request.body.year,
+      platform: request.body.platform,
+    };
+
+    response.redirect("/category/" + categoryId);
+  },
 };
 
 export default category;
