@@ -6,9 +6,20 @@
       <div class="item">
         <div class="content">
           <h3>{{title}}</h3>
+
+          <a href="/dashboard/deletecategory/{{id}}">Delete</a>
+
           <a href="/category/{{id}}">View Games</a>
+          
         </div>
       </div>
     {{/each}}
   </div>
 </section>
+
+<h2>Add New Category</h2>
+
+<form action="/dashboard/addcategory" method="POST">
+  <input type="text" name="title" placeholder="Category name" required>
+  <button type="submit">Add Category</button>
+</form>
