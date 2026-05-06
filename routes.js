@@ -19,6 +19,7 @@ router.get("/category/:id/editgame/:gameindex", category.editGameView);
 router.post("/category/:id/updategame/:gameindex", category.updateGame);
 router.get("/category/:id/sortname", category.sortByName);
 router.get("/category/:id/sortyear", category.sortByYear);
+router.post("/category/:id/search", category.searchGames);
 
 router.get("/about", about.createView);
 
