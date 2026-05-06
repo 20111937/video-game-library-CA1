@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+
 import logger from "../utils/logger.js";
 import games from "../models/games.json" with { type: "json" };
 
@@ -17,7 +17,7 @@ const dashboard = {
 
   addCategory(request, response) {
     const newCategory = {
-      id: uuidv4(),
+     id: Date.now().toString(),
       title: request.body.title,
       games: [],
     };
