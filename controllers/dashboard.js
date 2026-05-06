@@ -38,7 +38,7 @@ const dashboard = {
       games.categories.splice(index, 1);
     }
 
-    response.redirect("/dashboard");
+    response.redirect("/dashboard/");
   },
 };
 
