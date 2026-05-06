@@ -6,6 +6,7 @@ import logger from "./utils/logger.js";
 import { create } from 'express-handlebars';
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
