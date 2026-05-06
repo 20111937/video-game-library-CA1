@@ -15,12 +15,12 @@ const category = {
     if (!selectedCategory) {
       return response.status(404).send("Category not found");
     }
-    
-const viewData = {
-  title: selectedCategory.title,
-  id: categoryId,
-  games: selectedCategory.games,
-};
+
+    const viewData = {
+      title: selectedCategory.title,
+      id: categoryId,
+      games: selectedCategory.games,
+    };
 
     response.render("category", viewData);
   },
@@ -40,6 +40,19 @@ const viewData = {
     };
 
     selectedCategory.games.push(newGame);
+
+    response.redirect("/category/" + categoryId);
+  },
+
+  deleteGame(request, response) {
+    const categoryId = request.params.id;
+    const gameIndex = request.params.gameindex;
+
+    const selectedCategory = games.categories.find(
+      (category) => category.id === categoryId
+    );
+
+    selectedCategory.games.splice(gameIndex, 1);
 
     response.redirect("/category/" + categoryId);
   },
