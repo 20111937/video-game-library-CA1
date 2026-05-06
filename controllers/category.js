@@ -122,6 +122,27 @@ const category = {
 
     response.redirect("/category/" + categoryId);
   },
+
+  searchGames(request, response) {
+    const categoryId = request.params.id;
+    const searchTerm = request.body.search.toLowerCase();
+
+    const selectedCategory = games.categories.find(
+      (category) => category.id === categoryId
+    );
+
+    const filteredGames = selectedCategory.games.filter((game) =>
+      game.name.toLowerCase().includes(searchTerm)
+    );
+
+    const viewData = {
+      title: selectedCategory.title,
+      id: categoryId,
+      games: filteredGames,
+    };
+
+    response.render("category", viewData);
+  },
 };
 
 export default category;
