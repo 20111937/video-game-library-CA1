@@ -9,11 +9,13 @@ import start from './controllers/start.js';
 
 const router = express.Router();
 
-
 router.get('/', start.createView);
 router.get("/dashboard", dashboard.createView);
+
 router.get("/category/:id", category.createView);
 router.post("/category/:id/addgame", category.addGame);
+router.get("/category/:id/deletegame/:gameindex", category.deleteGame);
+
 router.get("/about", about.createView);
 
 router.post("/dashboard/addcategory", dashboard.addCategory);
