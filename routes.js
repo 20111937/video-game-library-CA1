@@ -6,10 +6,18 @@ import express from 'express';
 import logger from "./utils/logger.js";
 import about from "./controllers/about.js";
 import start from './controllers/start.js';
+import accounts from "./controllers/accounts.js";
 
 const router = express.Router();
 
 router.get('/', start.createView);
+
+router.get("/signup", accounts.signupView);
+router.post("/signup", accounts.signup);
+router.get("/login", accounts.loginView);
+router.post("/login", accounts.login);
+router.get("/logout", accounts.logout);
+
 router.get("/dashboard", dashboard.createView);
 
 router.get("/category/:id", category.createView);
