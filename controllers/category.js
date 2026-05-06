@@ -94,6 +94,34 @@ const category = {
 
     response.redirect("/category/" + categoryId);
   },
+
+  sortByName(request, response) {
+    const categoryId = request.params.id;
+
+    const selectedCategory = games.categories.find(
+      (category) => category.id === categoryId
+    );
+
+    selectedCategory.games.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    response.redirect("/category/" + categoryId);
+  },
+
+  sortByYear(request, response) {
+    const categoryId = request.params.id;
+
+    const selectedCategory = games.categories.find(
+      (category) => category.id === categoryId
+    );
+
+    selectedCategory.games.sort((a, b) =>
+      a.year - b.year
+    );
+
+    response.redirect("/category/" + categoryId);
+  },
 };
 
 export default category;
