@@ -2,17 +2,40 @@
 
   <h2>{{title}} Games</h2>
 
+  <form class="ui form"
+        action="/category/{{id}}/search"
+        method="POST">
+
+    <div class="field">
+      <input type="text"
+             name="search"
+             placeholder="Search games">
+    </div>
+
+    <button class="ui blue button" type="submit">
+      Search
+    </button>
+
+  </form>
+
+  <br>
+
   <div class="ui buttons">
-    <a class="ui button" href="/category/{{id}}/sortname">
+
+    <a class="ui button"
+       href="/category/{{id}}/sortname">
       Sort By Name
     </a>
 
-    <a class="ui button" href="/category/{{id}}/sortyear">
+    <a class="ui button"
+       href="/category/{{id}}/sortyear">
       Sort By Year
     </a>
+
   </div>
 
   <table class="ui celled table">
+
     <thead>
       <tr>
         <th>Name</th>
@@ -25,8 +48,11 @@
     </thead>
 
     <tbody>
+
       {{#each games}}
+
         <tr>
+
           <td>{{name}}</td>
           <td>{{developer}}</td>
           <td>{{year}}</td>
@@ -43,10 +69,15 @@
               Delete
             </a>
           </td>
+
         </tr>
+
       {{/each}}
+
     </tbody>
+
   </table>
+
 </section>
 
 <section class="ui segment">
@@ -85,7 +116,8 @@
              required>
     </div>
 
-    <button class="ui blue button" type="submit">
+    <button class="ui blue button"
+            type="submit">
       Add Game
     </button>
 
