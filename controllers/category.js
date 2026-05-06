@@ -18,11 +18,30 @@ const category = {
 
     const viewData = {
       title: selectedCategory.title,
-        id: "dashboard",
+      id: "dashboard",
       games: selectedCategory.games,
     };
 
     response.render("category", viewData);
+  },
+
+  addGame(request, response) {
+    const categoryId = request.params.id;
+
+    const selectedCategory = games.categories.find(
+      (category) => category.id === categoryId
+    );
+
+    const newGame = {
+      name: request.body.name,
+      developer: request.body.developer,
+      year: request.body.year,
+      platform: request.body.platform,
+    };
+
+    selectedCategory.games.push(newGame);
+
+    response.redirect("/category/" + categoryId);
   },
 };
 
