@@ -15,6 +15,8 @@ router.get("/dashboard", dashboard.createView);
 router.get("/category/:id", category.createView);
 router.post("/category/:id/addgame", category.addGame);
 router.get("/category/:id/deletegame/:gameindex", category.deleteGame);
+router.get("/category/:id/editgame/:gameindex", category.editGameView);
+router.post("/category/:id/updategame/:gameindex", category.updateGame);
 
 router.get("/about", about.createView);
 
