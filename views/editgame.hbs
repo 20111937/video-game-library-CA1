@@ -1,0 +1,47 @@
+<section class="ui segment">
+
+  <h2>Edit Game</h2>
+
+  <form class="ui form"
+        action="/category/{{categoryId}}/updategame/{{gameIndex}}"
+        method="POST">
+
+    <div class="field">
+      <label>Game Name</label>
+      <input type="text"
+             name="name"
+             value="{{game.name}}"
+             required>
+    </div>
+
+    <div class="field">
+      <label>Developer</label>
+      <input type="text"
+             name="developer"
+             value="{{game.developer}}"
+             required>
+    </div>
+
+    <div class="field">
+      <label>Year</label>
+      <input type="number"
+             name="year"
+             value="{{game.year}}"
+             required>
+    </div>
+
+    <div class="field">
+      <label>Platform</label>
+      <input type="text"
+             name="platform"
+             value="{{game.platform}}"
+             required>
+    </div>
+
+    <button class="ui blue button" type="submit">
+      Update Game
+    </button>
+
+  </form>
+
+</section>
