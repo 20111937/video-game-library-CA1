@@ -8,6 +8,7 @@
         <th>Developer</th>
         <th>Year</th>
         <th>Platform</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -17,23 +18,19 @@
           <td>{{developer}}</td>
           <td>{{year}}</td>
           <td>{{platform}}</td>
+          <td><a href="/category/{{../id}}/deletegame/{{@index}}">Delete</a></td>
         </tr>
       {{/each}}
     </tbody>
   </table>
 </section>
+
 <h2>Add New Game</h2>
 
 <form action="/category/{{id}}/addgame" method="POST">
-
   <input type="text" name="name" placeholder="Game name" required>
-
   <input type="text" name="developer" placeholder="Developer" required>
-
   <input type="number" name="year" placeholder="Year" required>
-
   <input type="text" name="platform" placeholder="Platform" required>
-
   <button type="submit">Add Game</button>
-
 </form>
