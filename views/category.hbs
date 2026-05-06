@@ -8,9 +8,11 @@
         <th>Developer</th>
         <th>Year</th>
         <th>Platform</th>
+        <th>Edit</th>
         <th>Delete</th>
       </tr>
     </thead>
+
     <tbody>
       {{#each games}}
         <tr>
@@ -18,7 +20,18 @@
           <td>{{developer}}</td>
           <td>{{year}}</td>
           <td>{{platform}}</td>
-          <td><a href="/category/{{../id}}/deletegame/{{@index}}">Delete</a></td>
+
+          <td>
+            <a href="/category/{{../id}}/editgame/{{@index}}">
+              Edit
+            </a>
+          </td>
+
+          <td>
+            <a href="/category/{{../id}}/deletegame/{{@index}}">
+              Delete
+            </a>
+          </td>
         </tr>
       {{/each}}
     </tbody>
@@ -29,6 +42,7 @@
   <h2>Add New Game</h2>
 
   <form class="ui form" action="/category/{{id}}/addgame" method="POST">
+
     <div class="field">
       <input type="text" name="name" placeholder="Game name" required>
     </div>
@@ -45,6 +59,9 @@
       <input type="text" name="platform" placeholder="Platform" required>
     </div>
 
-    <button class="ui blue button" type="submit">Add Game</button>
+    <button class="ui blue button" type="submit">
+      Add Game
+    </button>
+
   </form>
 </section>
