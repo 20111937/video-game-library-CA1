@@ -19,6 +19,7 @@ const dashboard = {
 },
 
 addCategory(request, response) {
+
   const newCategory = {
     id: uuidv4(),
     title: request.body.title,
@@ -31,6 +32,7 @@ addCategory(request, response) {
 },
 
 deleteCategory(request, response) {
+
   const categoryId = request.params.id;
 
   const index = games.categories.findIndex(
@@ -43,6 +45,5 @@ deleteCategory(request, response) {
 
   response.redirect("/dashboard");
 },
-};
 
 export default dashboard;
