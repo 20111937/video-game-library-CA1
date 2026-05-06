@@ -1,5 +1,16 @@
 <section class="ui center aligned middle aligned segment">
+
   <h2>{{title}} Games</h2>
+
+  <div class="ui buttons">
+    <a class="ui button" href="/category/{{id}}/sortname">
+      Sort By Name
+    </a>
+
+    <a class="ui button" href="/category/{{id}}/sortyear">
+      Sort By Year
+    </a>
+  </div>
 
   <table class="ui celled table">
     <thead>
@@ -39,24 +50,39 @@
 </section>
 
 <section class="ui segment">
+
   <h2>Add New Game</h2>
 
-  <form class="ui form" action="/category/{{id}}/addgame" method="POST">
+  <form class="ui form"
+        action="/category/{{id}}/addgame"
+        method="POST">
 
     <div class="field">
-      <input type="text" name="name" placeholder="Game name" required>
+      <input type="text"
+             name="name"
+             placeholder="Game name"
+             required>
     </div>
 
     <div class="field">
-      <input type="text" name="developer" placeholder="Developer" required>
+      <input type="text"
+             name="developer"
+             placeholder="Developer"
+             required>
     </div>
 
     <div class="field">
-      <input type="number" name="year" placeholder="Year" required>
+      <input type="number"
+             name="year"
+             placeholder="Year"
+             required>
     </div>
 
     <div class="field">
-      <input type="text" name="platform" placeholder="Platform" required>
+      <input type="text"
+             name="platform"
+             placeholder="Platform"
+             required>
     </div>
 
     <button class="ui blue button" type="submit">
@@ -64,4 +90,5 @@
     </button>
 
   </form>
+
 </section>
