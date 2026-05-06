@@ -15,6 +15,9 @@ router.get("/dashboard", dashboard.createView);
 router.get("/category/:id", category.createView);
 router.get("/about", about.createView);
 
+router.post("/dashboard/addcategory", dashboard.addCategory);
+router.get("/dashboard/deletecategory/:id", dashboard.deleteCategory);
+
 
 
 export default router;
