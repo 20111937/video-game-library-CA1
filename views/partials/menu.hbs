@@ -18,17 +18,27 @@
       About
     </a>
 
-    <a class="item" href="/signup">
-      Sign Up
-    </a>
+    {{#if user}}
 
-    <a class="item" href="/login">
-      Login
-    </a>
+      <div class="item">
+        Welcome {{user.name}}
+      </div>
 
-    <a class="item" href="/logout">
-      Logout
-    </a>
+      <a class="item" href="/logout">
+        Logout
+      </a>
+
+    {{else}}
+
+      <a class="item" href="/signup">
+        Sign Up
+      </a>
+
+      <a class="item" href="/login">
+        Login
+      </a>
+
+    {{/if}}
 
   </div>
 
