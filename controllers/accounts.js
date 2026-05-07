@@ -8,17 +8,18 @@ const accounts = {
   signupView(request, response) {
     response.render("signup", {
       title: "Sign Up",
+      user: request.session.user,
     });
   },
 
   loginView(request, response) {
     response.render("login", {
       title: "Login",
+      user: request.session.user,
     });
   },
 
   signup(request, response) {
-
     const newUser = {
       name: request.body.name,
       email: request.body.email,
@@ -33,7 +34,6 @@ const accounts = {
   },
 
   login(request, response) {
-
     const email = request.body.email;
     const password = request.body.password;
 
@@ -44,27 +44,21 @@ const accounts = {
     );
 
     if (existingUser) {
-
       request.session.user = existingUser;
 
       logger.info("User logged in");
 
       response.redirect("/dashboard");
-
     } else {
-
       response.redirect("/login");
-
     }
   },
 
   logout(request, response) {
-
     request.session.destroy();
 
     response.redirect("/");
   },
-
 };
 
 export default accounts;
