@@ -1,3 +1,4 @@
+'use strict';
 
 import logger from "../utils/logger.js";
 import games from "../models/games.json" with { type: "json" };
@@ -10,6 +11,7 @@ const dashboard = {
       title: "Game Categories",
       id: "dashboard",
       categories: games.categories,
+      user: request.session.user,
     };
 
     response.render("dashboard", viewData);
@@ -17,7 +19,7 @@ const dashboard = {
 
   addCategory(request, response) {
     const newCategory = {
-     id: Date.now().toString(),
+      id: Date.now().toString(),
       title: request.body.title,
       games: [],
     };
