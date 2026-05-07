@@ -1,21 +1,20 @@
 'use strict';
 
-
-
 import logger from "../utils/logger.js";
 import appStore from "../models/app-store.js";
 
 const start = {
   createView(request, response) {
     logger.info("Start page loading!");
-    
+
     const viewData = {
-     title: "Video Game Library",
-     id: "home",
-      info: appStore.getAppInfo()
+      title: "Video Game Library",
+      id: "home",
+      info: appStore.getAppInfo(),
+      user: request.session.user,
     };
-    
-    response.render('start', viewData);   
+
+    response.render('start', viewData);
   },
 };
 
